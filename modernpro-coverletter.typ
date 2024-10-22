@@ -52,7 +52,7 @@
             font: font-type,
             fill: primary-colour,
             weight: "light",
-          )[ #datetime.today(offset: auto).display("[day] [month repr:long] [year]")\ ]
+          )[ #datetime.today(offset: auto).display("[day]. [month repr:long] [year]")\ ]
         }
 
         if institution != [] {
@@ -144,12 +144,12 @@
 
   set text(11pt, font: font-type, fill: primary-colour, weight: "regular")
 
-  v(1pt)
-  [Sincerely,]
-  v(1pt)
+  set par(justify: false, first-line-indent: 0em)
+  v(1em)
+  [Mit freundlichen Grüßen,]
+  v(2.5em)
   [*#name*]
   if supplement != none {
-    v(1pt)
     [#supplement]
   }
 }
